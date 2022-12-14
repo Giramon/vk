@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-	<div id="map" class="map"></div>
+	 <div id="map" class="map"></div>
 
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
 	</script>
