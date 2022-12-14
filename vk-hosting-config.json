@@ -2,8 +2,8 @@
   "static_path": "build",
   "app_id": 0,
   "endpoints": {
-    "mobile": "localhost:3001.html",
-    "mvk": "localhost:3001.html",
-    "web": "localhost:3001.html"
+    "mobile": "localhost:3000.html",
+    "mvk": "localhost:3000.html",
+    "web": "localhost:3000.html"
   }
 }
