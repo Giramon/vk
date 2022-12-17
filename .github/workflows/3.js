@@ -4,7 +4,7 @@ function init() {
     var map = new ymaps.Map('map', {
         center: [55.15, 61.43],
         zoom: 12,
-        controls: ['zoomControl']
+        controls: ['zoomControl'],
         behaviors: ['drag']
     });
     var geolocation = ymaps.geolocation;  
