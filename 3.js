@@ -4,11 +4,7 @@ function init() {
     var map = new ymaps.Map('map', {
         center: [55.15, 61.43],
         zoom: 12,
-        controls: ['zoomControl' 'rulerControl' 'trafficControl' 'routeButtonControl' 'fullscreenControl' 'typeSelector'],
-         new ymaps.control.SearchControl({
-            options: {
-            size: 'large',
-            provider: 'yandex#search')}}
+        controls: ['zoomControl']
         behaviors: ['drag']
     });
     var geolocation = ymaps.geolocation;  
