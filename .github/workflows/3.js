@@ -2,12 +2,19 @@ ymaps.ready(init);
 
 function init() {
     var map = new ymaps.Map('map', {
-        center: [56.1553, 61.4313],
+        center: [55.15, 61.43],
         zoom: 12,
         controls: ['zoomControl'],
         behaviors: ['drag']
     });
     var geolocation = ymaps.geolocation;
+    var searchControl = new ymaps.control.SearchControl({
+    options: {
+    // Будет производиться поиск по топонимам и организациям.
+    provider: 'yandex#search'
+   }
+});
+myMap.controls.add(searchControl);
  
     geolocation.get({
     
@@ -16,7 +23,7 @@ function init() {
         mapStateAutoApply: true,
         
         autoReverseGeocode: true
-    }).then(function (result) {
+    }).then (function (result) {
  
         
         myMap.geoObjects.add(result.geoObjects);
