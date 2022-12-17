@@ -49,3 +49,9 @@ ReactDOM.render(
   </ConfigProvider>,
   document.getElementById("root")
 );
+{
+  "type":"VKWebAppInitResult",
+  "data":{
+    "result": true
+  }
+}
