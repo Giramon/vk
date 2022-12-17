@@ -24,7 +24,7 @@ bridge.send('VKWebAppOpenApp', {
   });
 function init() {
     var myMap = new ymaps.Map("map", {
-            center: [55.15, 61.39],
+            center: [55.15, 61.38],
             zoom: 12
         }, {
             searchControlProvider: 'yandex#search'
