@@ -33,6 +33,12 @@ const App = () => {
       </SplitLayout>
     </AppRoot>
   );
+  {
+  "type":"VKWebAppInitResult",
+  "data":{
+    "result": true
+  }
+}
 };
 
 ReactDOM.render(
