@@ -5,12 +5,13 @@ function init() {
         center: [55.15, 61.43],
         zoom: 12,
         controls: ['zoomControl'],
-        behaviors: ['drag']
+        behaviors: ['drag'],
+        searchControlProvider: 'yandex#search'
     });
-    var geolocation = ymaps.geolocation;  
+    var geolocation = ymaps.geolocation; 
 };
-myMap.controls.add(searchControl);
- 
+myMap.geoObjects 
+    myMap.controls.add(searchControl);
     geolocation.get({
     
         provider: 'yandex',
