@@ -30,5 +30,3 @@ myMap.controls.add(searchControl);
         console.log(result.geoObjects.get(0).properties.get('metaDataProperty'));
  
     });
-   
-    }
