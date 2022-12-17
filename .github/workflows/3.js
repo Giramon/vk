@@ -4,21 +4,15 @@ function init() {
     var map = new ymaps.Map('map', {
         center: [55.15, 61.43],
         zoom: 12,
-        controls: ['zoomControl'],
+        controls: ['zoomControl' 'rulerControl' 'trafficControl' 'routeButtonControl' 'fullscreenControl' 'typeSelector'],
+         new ymaps.control.SearchControl({
+            options: {
+            size: 'large',
+            provider: 'yandex#search')}}
         behaviors: ['drag']
     });
-    var geolocation = ymaps.geolocation;
-    var searchControl = new ymaps.control.SearchControl({
-    options: {
-    // Будет производиться поиск по топонимам и организациям.
-    provider: 'yandex#search'
-   }
-   var searchControl = new ymaps.control.SearchControl({
-    options: {
-        provider: 'yandex#map'
-    }
-});  
-});
+    var geolocation = ymaps.geolocation;  
+};
 myMap.controls.add(searchControl);
  
     geolocation.get({
