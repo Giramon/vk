@@ -13,6 +13,11 @@ function init() {
     // Будет производиться поиск по топонимам и организациям.
     provider: 'yandex#search'
    }
+   var searchControl = new ymaps.control.SearchControl({
+    options: {
+        provider: 'yandex#map'
+    }
+});  
 });
 myMap.controls.add(searchControl);
  
