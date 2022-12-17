@@ -1,5 +1,27 @@
 ymaps.ready(init);
-
+// Подписывается на события, отправленные нативным клиентом
+bridge.subscribe((e) => console.log(e)); 
+    
+// Отправляет событие нативному клиенту
+bridge.send("VKWebAppInit", {});      
+    
+// Проверяет, поддерживается ли событие на текущей платформе
+if (bridge.supports("VKWebAppResizeWindow")) {
+  bridge.send("VKWebAppResizeWindow", {"width": 800, "height": 1000});
+}
+bridge.send('VKWebAppOpenApp', {
+  app_id: 6909581,
+  location: 'test'
+  })
+  .then((data) => { 
+    if (data.result) {
+      // Приложение открыто
+    }
+  })
+  .catch((error) => {
+    // Ошибка
+    console.log(error);
+  });
 function init() {
     var myMap = new ymaps.Map("map", {
             center: [55.15, 61.43],
@@ -105,4 +127,5 @@ function init() {
             preset: 'islands#blueCircleDotIconWithCaption',
             iconCaptionMaxWidth: '50'
         }));
+
 }
