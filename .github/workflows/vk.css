@@ -15,7 +15,17 @@ import {
 } 
 from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
-.section {
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(http://habrastorage.org/files/996/d76/d04/996d76d0410d422fa54cc433ce7ead2a.png);
   display: flex;
   justify-content: space-between;
   overflow-x: auto;
