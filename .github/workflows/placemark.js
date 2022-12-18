@@ -1,4 +1,33 @@
 ymaps.ready(init);
+bridge.send('VKWebAppGetAuthToken', { 
+  app_id: 6909581, 
+  scope: 'friends,status'
+  })
+  .then((data) => { 
+    if (data.access_token) {
+      // Ключ доступа пользователя получен
+    }
+  })
+  .catch((error) => {
+    // Ошибка
+    console.log(error);
+  });
+bridge.send('VKWebAppCallAPIMethod', {
+  method: 'users.get',
+  params: {
+    user_ids: '743784474,743784479',
+    v: '5.131',
+    access_token: 'RFC 6749'
+  }})
+  .then((data) => { 
+    if (data.response) {
+      // Метод API выполнен
+    }
+  })
+  .catch((error) => {
+    // Ошибка
+    console.log(error);
+  });
 // Подписывается на события, отправленные нативным клиентом
 bridge.subscribe((e) => console.log(e)); 
     
@@ -22,6 +51,7 @@ bridge.send('VKWebAppOpenApp', {
     // Ошибка
     console.log(error);
   });
+  
 function init() {
     var myMap = new ymaps.Map("map", {
             center: [55.15, 61.38],
@@ -34,7 +64,7 @@ function init() {
             // Описание геометрии.
             geometry: {
                 type: "Point",
-                coordinates: [55.15, 61.39]
+                coordinates: [55.15, 61.43]
             },
             // Свойства.
             properties: {
@@ -77,6 +107,7 @@ function init() {
         });
 
     myMap.geoObjects
+
         .add(myGeoObject)
         .add(myPieChart)
         .add(new ymaps.Placemark([55.217326,61.283751], {
@@ -127,5 +158,4 @@ function init() {
             preset: 'islands#blueCircleDotIconWithCaption',
             iconCaptionMaxWidth: '50'
         }));
-
 }
